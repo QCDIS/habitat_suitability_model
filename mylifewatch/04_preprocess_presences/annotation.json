@@ -8,76 +8,76 @@
   ],
   "inputs": [
     {
-      "type": "Text",
-      "name": "tempsal_filename",
-      "path": "/mnt/inputs/tempsal.nc",
-      "label": "tempsal_filename",
-      "description": ""
+      "type": "Zip",
+      "name": "tempsal",
+      "path": "/mnt/inputs/tempsal.zip",
+      "label": "tempsal output",
+      "description": "output from 03 download environment"
     },
     {
-      "type": "Text",
-      "name": "npp_filename",
-      "path": "/mnt/inputs/npp.nc",
-      "label": "npp_filename",
-      "description": ""
+      "type": "Zip",
+      "name": "npp",
+      "path": "/mnt/inputs/npp.zip",
+      "label": "npp output",
+      "description": "npp output from 03 download environment"
     },
     {
-      "type": "Text",
-      "name": "datasets_all_file",
-      "path": "/mnt/inputs/datasets_all.csv",
-      "label": "datasets_all_file",
-      "description": ""
+      "type": "Zip",
+      "name": "datasets_all",
+      "path": "/mnt/inputs/datasets_all.zip",
+      "label": "datasets all",
+      "description": "zip file containing all datasets used in the analysis"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "mydata_eurobis_file",
-      "path": "/mnt/inputs/mydata_eurobis_file.RDS",
+      "path": "/mnt/inputs/mydata_eurobis_file.zip",
       "label": "mydata_eurobis_file",
       "description": ""
     },
     {
-      "type": "Text",
-      "name": "study_area_file",
-      "path": "/mnt/inputs/study_area_file.RDS",
-      "label": "study_area_file",
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/inputs/study_area.zip",
+      "label": "study_area",
       "description": ""
     },
-    {
-      "type": "Text",
+        {
+      "type": "Zip",
       "name": "datasets_selection",
-      "path": "/mnt/inputs/datasets_selection.csv",
-      "label": "datasets_selection",
-      "description": ""
+      "path": "/mnt/inputs/datasets_selection.zip",
+      "label": "datasets selection",
+      "description": "datasets selection output from 04 preprocess presences"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "datasets_selection",
-      "path": "/mnt/outputs/datasets_selection.csv",
-      "label": "datasets_selection",
-      "description": ""
+      "path": "/mnt/outputs/datasets_selection.zip",
+      "label": "datasets selection",
+      "description": "datasets selection output from 04 preprocess presences"
     },
     {
-      "type": "Text",
-      "name": "thinned_m_file",
-      "path": "/mnt/outputs/thinned_m.RDS",
-      "label": "thinned_m_file",
-      "description": ""
+      "type": "Zip",
+      "name": "thinned_m",
+      "path": "/mnt/outputs/thinned_m.zip",
+      "label": "thinned_m",
+      "description": "thinned_m output from 04 preprocess presences"
     },
     {
-      "type": "Text",
-      "name": "thinned_d_file",
-      "path": "/mnt/outputs/thinned_d.RDS",
-      "label": "thinned_d_file",
-      "description": ""
+      "type": "Zip",
+      "name": "thinned_d",
+      "path": "/mnt/outputs/thinned_d.zip",
+      "label": "thinned d",
+      "description": "thinned_d output from 04 preprocess presences"
     },
     {
-      "type": "Text",
-      "name": "cleaned_data_file",
-      "path": "/mnt/outputs/cleaned_data.RDS",
-      "label": "cleaned_data_file",
-      "description": ""
+      "type": "Zip",
+      "name": "cleaned_data",
+      "path": "/mnt/outputs/cleaned_data.zip",
+      "label": "cleaned data",
+      "description": "cleaned data output from 04 preprocess presences"
     }
   ],
   "resources": {
@@ -88,7 +88,8 @@
     "estimatedTime": 4
   },
   "tags": [
-"Habitat Suitability Model" , "MARCO-BOLO"
+    "Habitat Suitability Model",
+    "MARCO-BOLO"
   ],
   "license": "GPL v3",
   "version": "0.0.1",
@@ -102,10 +103,10 @@
     }
   ],
   "publicationDate": "Thu, 04 June 2025 11:13:00 GMT",
-  "author": "Nowé Jo-Hannes" ,
+  "author": "Nowé Jo-Hannes",
   "bugs": {
-      "email": "johannes.nowe@vliz.be",
-      "url": "https://helpdesk.lifewatch.eu/"
+    "email": "johannes.nowe@vliz.be",
+    "url": "https://helpdesk.lifewatch.eu/"
   },
   "citation": null,
   "testPath": "emptyUnitTest.sh",

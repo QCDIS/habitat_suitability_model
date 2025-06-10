@@ -38,34 +38,27 @@
   ],
   "inputs": [
     {
-      "type": "Text",
-      "name": "envdir",
-      "path": "/mnt/outputs/",
-      "label": "envdir",
-      "description": "output_directory"
-    },
-    {
-      "type": "Text",
-      "name": "study_area_file",
-      "path": "/mnt/inputs/study_area.RDS",
-      "label": "study_area",
-      "description": "RDS file containing the study area"
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/inputs/study_area.zip",
+      "label": "study area file",
+      "description": "zip file containing the study area"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
-      "name": "tempsal_output_filename",
-      "path": "/mnt/outputs/tempsal.nc",
-      "label": "tempsal_output_filename",
-      "description": ""
+      "type": "Zip",
+      "name": "tempsal",
+      "path": "/mnt/outputs/tempsal.zip",
+      "label": "tempsal output",
+      "description": "output from 03 download environment"
     },
     {
-      "type": "Text",
-      "name": "npp_output_filename",
-      "path": "/mnt/outputs/npp.nc",
-      "label": "npp_output_filename",
-      "description": ""
+      "type": "Zip",
+      "name": "npp",
+      "path": "/mnt/outputs/npp.zip",
+      "label": "npp output",
+      "description": "npp output from 03 download environment"
     }
   ],
   "resources": {

@@ -16,8 +16,21 @@ path = list(
   setup = "/mnt/outputs/01_setup.json",
   study_area_file = "/mnt/outputs/study_area.RDS",
   temporal_extent_file = "/mnt/outputs/temporal_extent.RDS",
+  spatial_layers = "/mnt/outputs/spatial_layers",
   code = "./code"
 )
+
+
+#Check for their existence, create if missing
+if(!dir.exists(path$spatial_layers)){
+    dir.create(path$spatial_layer,recursive = TRUE)
+    cat("Folder created:", path$spatial_layer, "\n")
+} else {
+    cat("Folder already exists:", path$spatial_layer, "\n")
+}
+
+
+
 
 # FUNCTIONS ---------------------------------------------------------------
 lapply(list.files("functions", full.names = TRUE),source)
@@ -26,15 +39,15 @@ lapply(list.files("/wrp/utils", full.names = TRUE, pattern = "\\.R$"), source)
 # INPUT -------------------------------------------------------------------
 
 args = args_parse(commandArgs(trailingOnly = TRUE))
-
+if (length(args) == 0) {
+    stop("No arguments provided. Please provide the necessary arguments.")
+}
 
 
 # WORKFLOW ----------------------------------------------------------------
 
-
-
 #Define user input choices
-study_area <- load_ospar(c("II","III"), filepath = file.path(spatdir,args$study_area_name))
+study_area <- load_ospar(c("II","III"), filepath = file.path(path$spatial_layers,"ospar_regions_2017_01_002.shp"))
 # write   study_area as RDS file
 saveRDS(study_area, file = file.path(path$study_area_file))
 

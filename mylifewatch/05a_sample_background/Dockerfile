@@ -1,6 +1,4 @@
-FROM ghcr.io/qcdis/habitat_suitability_model:v0.1.9
-
-RUN which python3
+FROM docker.io/library/base-my
 
 # Copy dependencies and install them
 COPY req req
@@ -13,4 +11,4 @@ WORKDIR wrp
 ADD code code
 ADD main.r .
 
-ENTRYPOINT ["Rscript", "--vanilla", "main.r"]
+# ENTRYPOINT ["Rscript", "--vanilla", "main.r"]

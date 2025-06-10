@@ -8,34 +8,34 @@
   ],
   "inputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "01_setup",
-      "path": "/mnt/inputs/01_setup.json",
-      "label": "01_setup",
-      "description": ""
+      "path": "/mnt/inputs/01_setup.zip",
+      "label": "01_setup output",
+      "description": "zip file containing the setup information"
     },
     {
-      "type": "Text",
-      "name": "nc",
-      "path": "/mnt/inputs/nc/",
-      "label": "nc",
-      "description": ""
+      "type": "Zip",
+      "name": "nc_10",
+      "path": "/mnt/inputs/nc.zip",
+      "label": "nc 10",
+      "description": "netcdf output from 10 mapping predictions"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
-      "name": "bio_oracle",
-      "path": "/mnt/outputs/bio_oracle/",
-      "label": "bio_oracle",
-      "description": ""
+      "type": "Zip",
+      "name": "bio_oracle_11",
+      "path": "/mnt/outputs/bio_oracle.zip",
+      "label": "bio oracle 11",
+      "description": "bio oracle output from 11 static plot"
     },
     {
-      "type": "Text",
-      "name": "nc",
-      "path": "/mnt/outputs/nc/",
-      "label": "nc",
-      "description": ""
+      "type": "Zip",
+      "name": "nc_11",
+      "path": "/mnt/outputs/nc.zip",
+      "label": "nc 11",
+      "description": "netcdf output from 11 static plot"
     }
   ],
   "resources": {

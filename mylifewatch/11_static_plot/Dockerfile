@@ -1,4 +1,4 @@
-FROM ghcr.io/qcdis/habitat_suitability_model:v0.1.9
+FROM docker.io/library/base-my
 
 RUN which python3
 
@@ -13,4 +13,4 @@ WORKDIR wrp
 ADD code code
 ADD main.r .
 
-ENTRYPOINT ["Rscript", "--vanilla", "main.r"]
+

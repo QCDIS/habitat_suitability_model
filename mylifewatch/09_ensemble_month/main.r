@@ -102,10 +102,14 @@ recipe_m <- monthly_prep$recipe
 cat("- prediction_layers -\n")
 prediction_layers <- terra::sds(thetao_avg_m, so_avg_m, npp_avg_m, bathy)
 names(prediction_layers) <- c("thetao", "so", "npp", "bathy")
+# Print prediction_layers type
+cat("- prediction_layers type -\n")
+print(class(prediction_layers))
 
 start_time <- Sys.time()
 cat('- Create monthly folds -\n')
-monthly_folds <- knndm_fold(train_data_m, prediction_layers = prediction_layers, samplesize = args$samplesize)
+samplesize <- as.numeric(args$samplesize)
+monthly_folds <- knndm_fold(train_data_m, prediction_layers = prediction_layers, samplesize = samplesize)
 cat('- start_time -\n')
 print(Sys.time() - start_time)
 cat('- Get  inner_month -\n')

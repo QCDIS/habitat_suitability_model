@@ -22,15 +22,5 @@
     }
   ],
   "inputs": [
-    {
-      "name": "envdir",
-      "defaultValue": "/mnt/outputs/",
-      "value": "/mnt/outputs/"
-    },
-    {
-      "name": "study_area_file",
-      "defaultValue": "/mnt/inputs/study_area.RDS",
-      "value": "/mnt/inputs/study_area.RDS"
-    }
   ]
 }

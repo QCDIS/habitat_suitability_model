@@ -4,10 +4,9 @@
       "name": "samplesize",
       "label": "samplesize",
       "description": "Size of the sample to be used for training the model.",
-      "defaultValue": "100",
+      "defaultValue": "2000",
+      "value": "100",
       "type": "String"
     }
-  ],
-  "inputs": [
   ]
 }

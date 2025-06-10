@@ -8,97 +8,90 @@
   ],
   "inputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "01_setup",
-      "path": "/mnt/inputs/01_setup.json",
-      "label": "01_setup",
-      "description": ""
+      "path": "/mnt/inputs/01_setup.zip",
+      "label": "01_setup output",
+      "description": "zip file containing the setup information"
     },
     {
-      "type": "Text",
-      "name": "study_area_file",
-      "path": "/mnt/inputs/study_area.RDS",
-      "label": "study_area",
-      "description": "RDS file containing the study area"
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/inputs/study_area.zip",
+      "label": "study area file",
+      "description": "zip file containing the study area"
     },
     {
-      "type": "Text",
-      "name": "stack_fit",
-      "path": "/mnt/inputs/stack_fit.RDS",
-      "label": "stack_fit",
-      "description": ""
+      "type": "Zip",
+      "name": "modelling_decade",
+      "path": "/mnt/input/modelling_decade.zip",
+      "label": "modelling decade",
+      "description": "modelling decade output from 08 ensemble decade"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "thetao_avg_m",
-      "path": "/mnt/inputs/thetao_avg_m.nc",
-      "label": "thetao_avg_m",
-      "description": ""
+      "path": "/mnt/inputs/thetao_avg_m.zip",
+      "label": "thetao avg m",
+      "description": "thetao average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "so_avg_m",
-      "path": "/mnt/inputs/so_avg_m.nc",
-      "label": "so_avg_m",
-      "description": ""
+      "path": "/mnt/inputs/so_avg_m.zip",
+      "label": "so avg m",
+      "description": "so average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "npp_avg_m",
-      "path": "/mnt/inputs/npp_avg_m.nc",
+      "path": "/mnt/inputs/npp_avg_m.zip",
       "label": "npp_avg_m",
-      "description": ""
+      "description": "npp average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "bathy",
-      "path": "/mnt/inputs/bathy.nc",
+      "path": "/mnt/inputs/bathy.zip",
       "label": "bathy",
-      "description": ""
+      "description": "bathy output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "thetao_avg_d",
-      "path": "/mnt/inputs/thetao_avg_d.nc",
+      "path": "/mnt/inputs/thetao_avg_d.zip",
       "label": "thetao_avg_d",
-      "description": ""
+      "description": "thetao average daily output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "so_avg_d",
-      "path": "/mnt/inputs/so_avg_d.nc",
+      "path": "/mnt/inputs/so_avg_d.zip",
       "label": "so_avg_d",
-      "description": ""
+      "description": "so average daily output from 06 extract environment"
     },
     {
-      "type": "Text",
-      "name": "so_avg_d",
-      "path": "/mnt/inputs/so_avg_d.nc",
-      "label": "so_avg_d",
-      "description": ""
-    },
-    {
-      "type": "Text",
+      "type": "Zip",
       "name": "npp_avg_d",
-      "path": "/mnt/inputs/npp_avg_d.nc",
-      "label": "npp_avg_d",
-      "description": ""
+      "path": "/mnt/inputs/npp_avg_d.zip",
+      "label": "npp avg d",
+      "description": "npp average daily output from 06 extract environment"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
-      "name": "bio_oracle",
-      "path": "/mnt/outputs/bio_oracle/",
-      "label": "bio_oracle",
-      "description": ""
+      "type": "Zip",
+      "name": "bio_oracle_10",
+      "path": "/mnt/outputs/bio_oracle.zip",
+      "label": "bio oracle 10",
+      "description": "bio oracle output from 10 mapping predictions"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "nc",
-      "path": "/mnt/outputs/nc/",
+      "path": "/mnt/outputs/nc.zip",
       "label": "nc",
-      "description": ""
+      "description": "netcdf output from 10 mapping predictions"
     }
   ],
   "resources": {
@@ -109,7 +102,8 @@
     "estimatedTime": 4
   },
   "tags": [
-"Habitat Suitability Model" , "MARCO-BOLO"
+    "Habitat Suitability Model",
+    "MARCO-BOLO"
   ],
   "license": "GPL v3",
   "version": "0.0.1",
@@ -123,10 +117,10 @@
     }
   ],
   "publicationDate": "Thu, 04 June 2025 11:13:00 GMT",
-  "author": "Nowé Jo-Hannes" ,
+  "author": "Nowé Jo-Hannes",
   "bugs": {
-      "email": "johannes.nowe@vliz.be",
-      "url": "https://helpdesk.lifewatch.eu/"
+    "email": "johannes.nowe@vliz.be",
+    "url": "https://helpdesk.lifewatch.eu/"
   },
   "citation": null,
   "testPath": "emptyUnitTest.sh",

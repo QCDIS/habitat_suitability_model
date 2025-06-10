@@ -8,27 +8,34 @@
   ],
   "inputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "01_setup",
-      "path": "/mnt/inputs/01_setup.json",
-      "label": "01_setup",
-      "description": ""
+      "path": "/mnt/inputs/01_setup.zip",
+      "label": "01_setup output",
+      "description": "zip file containing the setup information"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "cleaned_data",
-      "path": "/mnt/inputs/cleaned_data.RDS",
-      "label": "cleaned_data",
-      "description": ""
+      "path": "/mnt/inputs/cleaned_data.zip",
+      "label": "cleaned data",
+      "description": "cleaned data output from 04 preprocess presences"
+    },
+        {
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/inputs/study_area.zip",
+      "label": "study area file",
+      "description": "zip file containing the study area"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "png",
-      "path": "/mnt/outputs/png",
+      "path": "/mnt/outputs/png.zip",
       "label": "png",
-      "description": ""
+      "description": "png files from 07 PA Exploration"
     }
   ],
   "resources": {

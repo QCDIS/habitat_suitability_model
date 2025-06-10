@@ -1,17 +1,10 @@
 {
   "name": "habitat-suitability-model-01-setup",
-  "label": "Habitat Suitability model 01 setup",
+  "label": "habitat-suitability model 01 setup",
   "description": "A script to make the general folder structure and load the necessary packages",
-  "type": "DataCollection",
+  "type": "DataAnalysing",
   "dockerImage": "habitat-suitability-model-01-setup",
   "parameters": [
-    {
-      "name": "study_area_name",
-      "label": "study_area_name",
-      "description": "study_area_name",
-      "defaultValue": "ospar_regions_2017_01_002.shp",
-      "type": "String"
-    },
     {
       "name": "start_date",
       "label": "start_date",
@@ -66,24 +59,24 @@
   "outputs": [
     {
       "type": "zip",
-      "name": "output",
-      "path": "/mnt/outputs/output.zip",
-      "label": "output zip",
-      "description": "zip file containing the setup information, temporal_extent and study_area_file"
+      "name": "01_setup",
+      "path": "/mnt/outputs/01_setup.zip",
+      "label": "01_setup output",
+      "description": "zip file containing the setup information"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "temporal_extent",
-      "path": "/mnt/outputs/temporal_extent.RDS",
-      "label": "temporal_extent",
-      "description": "temporal_extent"
+      "path": "/mnt/outputs/temporal_extent.zip",
+      "label": "temporal extent file",
+      "description": "temporal extent from 01_setup"
     },
     {
-      "type": "Text",
-      "name": "study_area_file",
-      "path": "/mnt/outputs/study_area.RDS",
-      "label": "study_area",
-      "description": "RDS file containing the study area"
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/outputs/study_area.zip",
+      "label": "study area file",
+      "description": "zip file containing the study area"
     }
   ],
   "resources": {
@@ -94,7 +87,8 @@
     "estimatedTime": 4
   },
   "tags": [
-"Habitat Suitability Model" , "MARCO-BOLO"
+    "tag 1",
+    "tag 2"
   ],
   "license": "GPL v3",
   "version": "0.0.1",

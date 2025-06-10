@@ -1,20 +1,3 @@
 {
-  "parameters": [],
-  "inputs": [
-    {
-      "name": "input",
-      "defaultValue": "/mnt/inputs/01_setup.json",
-      "value": "/mnt/inputs/01_setup.json"
-    },
-    {
-      "name": "study_area_file",
-      "defaultValue": "/mnt/inputs/study_area.RDS",
-      "value": "/mnt/inputs/study_area.RDS"
-    },
-    {
-      "name": "temporal_extent",
-      "defaultValue": "/mnt/inputs/temporal_extent.RDS",
-      "value": "/mnt/inputs/temporal_extent.RDS"
-    }
-  ]
+  "parameters": []
 }

@@ -15,104 +15,48 @@
   ],
   "inputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "env_month",
-      "path": "/mnt/inputs/env_month.RDS",
-      "label": "env_month",
-      "description": ""
+      "path": "/mnt/inputs/env_month.zip",
+      "label": "env month",
+      "description": "env month output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "thetao_avg_m",
-      "path": "/mnt/inputs/thetao_avg_m.nc",
-      "label": "thetao_avg_m",
-      "description": ""
+      "path": "/mnt/inputs/thetao_avg_m.zip",
+      "label": "thetao avg m",
+      "description": "thetao average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "so_avg_m",
-      "path": "/mnt/inputs/so_avg_m.nc",
-      "label": "so_avg_m",
-      "description": ""
+      "path": "/mnt/inputs/so_avg_m.zip",
+      "label": "so avg m",
+      "description": "so average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "npp_avg_m",
-      "path": "/mnt/inputs/npp_avg_m.nc",
+      "path": "/mnt/inputs/npp_avg_m.zip",
       "label": "npp_avg_m",
-      "description": ""
+      "description": "npp average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "bathy",
-      "path": "/mnt/inputs/bathy.nc",
+      "path": "/mnt/inputs/bathy.zip",
       "label": "bathy",
-      "description": ""
+      "description": "bathy output from 06 extract environment"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
-      "name": "ranger",
-      "path": "/mnt/outputs/modelling_monthly/ranger.RDS",
-      "label": "ranger",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "randforest",
-      "path": "/mnt/outputs/modelling_monthly/randforest.RDS",
-      "label": "randforest",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "gam",
-      "path": "/mnt/outputs/modelling_monthly/gam.RDS",
-      "label": "gam",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "mars",
-      "path": "/mnt/outputs/modelling_monthly/mars.RDS",
-      "label": "mars",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "maxent",
-      "path": "/mnt/outputs/modelling_monthly/maxent.RDS",
-      "label": "maxent",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "xgb",
-      "path": "/mnt/outputs/modelling_monthly/xgb.RDS",
-      "label": "xgb",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "stack_data",
-      "path": "/mnt/outputs/modelling_monthly/stack_data.RDS",
-      "label": "stack_data",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "stack_mod",
-      "path": "/mnt/outputs/modelling_monthly/stack_mod.RDS",
-      "label": "stack_mod",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "stack_fit",
-      "path": "/mnt/outputs/modelling_monthly/stack_fit.RDS",
-      "label": "stack_fit",
-      "description": ""
+      "type": "Zip",
+      "name": "modelling_monthly",
+      "path": "/mnt/outputs/modelling_monthly.zip",
+      "label": "modelling monthly",
+      "description": "modelling monthly output from 09 ensemble"
     }
   ],
   "resources": {
@@ -123,7 +67,8 @@
     "estimatedTime": 4
   },
   "tags": [
-"Habitat Suitability Model" , "MARCO-BOLO"
+    "Habitat Suitability Model",
+    "MARCO-BOLO"
   ],
   "license": "GPL v3",
   "version": "0.0.1",
@@ -137,10 +82,10 @@
     }
   ],
   "publicationDate": "Thu, 04 June 2025 11:13:00 GMT",
-  "author": "Nowé Jo-Hannes" ,
+  "author": "Nowé Jo-Hannes",
   "bugs": {
-      "email": "johannes.nowe@vliz.be",
-      "url": "https://helpdesk.lifewatch.eu/"
+    "email": "johannes.nowe@vliz.be",
+    "url": "https://helpdesk.lifewatch.eu/"
   },
   "citation": null,
   "testPath": "emptyUnitTest.sh",

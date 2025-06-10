@@ -39,5 +39,8 @@ COPY functions/ /wrp/functions
 RUN mkdir /wrp/utils
 COPY utils/ /wrp/utils
 
+RUN chmod -R +x /wrp/utils/entrypoint.sh
 # Default command
-CMD ["R"]
+
+ENTRYPOINT ["/wrp/utils/entrypoint.sh"]
+

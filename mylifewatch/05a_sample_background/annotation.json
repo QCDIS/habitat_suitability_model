@@ -8,76 +8,69 @@
   ],
   "inputs": [
     {
-      "type": "Text",
-      "name": "tempsal_filename",
-      "path": "/mnt/inputs/tempsal.nc",
-      "label": "tempsal_filename",
-      "description": ""
+      "type": "Zip",
+      "name": "01_setup",
+      "path": "/mnt/inputs/01_setup.zip",
+      "label": "01_setup output",
+      "description": "zip file containing the setup information"
+    },
+        {
+      "type": "Zip",
+      "name": "tempsal",
+      "path": "/mnt/inputs/tempsal.zip",
+      "label": "tempsal output",
+      "description": "output from 03 download environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
+      "name": "temporal_extent",
+      "path": "/mnt/inputs/temporal_extent.zip",
+      "label": "temporal extent",
+      "description": "temporal extent from 01_setup"
+    },
+        {
+      "type": "Zip",
       "name": "datasets_selection",
-      "path": "/mnt/inputs/datasets_selection.csv",
-      "label": "datasets_selection",
-      "description": ""
+      "path": "/mnt/inputs/datasets_selection.zip",
+      "label": "datasets selection",
+      "description": "datasets selection output from 04 preprocess presences"
+    },
+        {
+      "type": "Zip",
+      "name": "thinned_m",
+      "path": "/mnt/inputs/thinned_m.zip",
+      "label": "thinned_m",
+      "description": "thinned_m output from 04 preprocess presences"
     },
     {
-      "type": "Text",
-      "name": "thinned_m_file",
-      "path": "/mnt/inputs/thinned_m.RDS",
-      "label": "thinned_m_file",
-      "description": ""
-    },
-    {
-      "type": "Text",
+      "type": "Zip",
       "name": "thinned_d_file",
-      "path": "/mnt/inputs/thinned_d.RDS",
+      "path": "/mnt/inputs/thinned_d.zip",
       "label": "thinned_d_file",
       "description": ""
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "target_group",
-      "path": "/mnt/inputs/target_group.RDS",
+      "path": "/mnt/inputs/target_group.zip",
       "label": "target_group",
       "description": ""
     },
     {
-      "type": "Text",
-      "name": "study_area_file",
-      "path": "/mnt/inputs/study_area.RDS",
-      "label": "study_area",
-      "description": "RDS file containing the study area"
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/inputs/study_area.zip",
+      "label": "study area file",
+      "description": "zip file containing the study area"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
-      "name": "pback_month",
-      "path": "/mnt/outputs/pback_month.RDS",
-      "label": "pback_month",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "pback_decade",
-      "path": "/mnt/outputs/pback_decade.RDS",
-      "label": "pback_decade",
-      "description": ""
-    },
-    {
-      "type": "Text",
+      "type": "Zip",
       "name": "thinned_tg_m",
-      "path": "/mnt/outputs/thinned_tg_m.RDS",
-      "label": "thinned_tg_m",
-      "description": ""
-    },
-    {
-      "type": "Text",
-      "name": "thinned_tg_d",
-      "path": "/mnt/outputs/thinned_tg_d.RDS",
-      "label": "thinned_tg_d",
-      "description": ""
+      "path": "/mnt/outputs/thinned_tg_m.zip",
+      "label": "thinned tg m",
+      "description": "thinned tg m output from 05a sample background"
     }
   ],
   "resources": {

@@ -8,111 +8,125 @@
   ],
   "inputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "01_setup",
-      "path": "/mnt/inputs/01_setup.json",
-      "label": "01_setup",
-      "description": ""
+      "path": "/mnt/inputs/01_setup.zip",
+      "label": "01_setup output",
+      "description": "zip file containing the setup information"
     },
     {
-      "type": "Text",
+      "type": "Zip",
+      "name": "pback_month",
+      "path": "/mnt/inputs/pback_month.zip",
+      "label": "pback month",
+      "description": "pback month output from 05b sample background"
+    },
+    {
+      "type": "Zip",
       "name": "cleaned_data",
-      "path": "/mnt/inputs/cleaned_data.RDS",
-      "label": "cleaned_data",
-      "description": ""
+      "path": "/mnt/inputs/cleaned_data.zip",
+      "label": "cleaned data",
+      "description": "cleaned data output from 04 preprocess presences"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "pback_decade",
-      "path": "/mnt/inputs/pback_decade.RDS",
-      "label": "pback_decade",
-      "description": ""
+      "path": "/mnt/inputs/pback_decade.zip",
+      "label": "pback decade",
+      "description": "pback decade output from 05b sample background"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "mean_npp",
-      "path": "/mnt/inputs/mean_npp.nc",
+      "path": "/mnt/inputs/mean_npp.zip",
       "label": "mean_npp",
       "description": ""
     },
     {
-      "type": "Text",
-      "name": "npp_filename",
-      "path": "/mnt/inputs/npp.nc",
-      "label": "npp_filename",
-      "description": ""
+      "type": "Zip",
+      "name": "npp",
+      "path": "/mnt/inputs/npp.zip",
+      "label": "npp output",
+      "description": "npp output from 03 download environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "bathy_sliced",
       "path": "/mnt/inputs/bathy_sliced",
       "label": "bathy_sliced",
       "description": ""
     },
     {
-      "type": "Text",
-      "name": "study_area_file",
-      "path": "/mnt/inputs/study_area.RDS",
-      "label": "study_area",
-      "description": "RDS file containing the study area"
+      "type": "Zip",
+      "name": "study_area",
+      "path": "/mnt/inputs/study_area.zip",
+      "label": "study area file",
+      "description": "zip file containing the study area"
     }
   ],
   "outputs": [
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "env_month",
-      "path": "/mnt/outputs/env_month.RDS",
-      "label": "env_month",
-      "description": ""
+      "path": "/mnt/outputs/env_month.zip",
+      "label": "env month",
+      "description": "env month output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "env_decade",
-      "path": "/mnt/outputs/env_decade.RDS",
-      "label": "env_decade",
-      "description": ""
+      "path": "/mnt/outputs/env_decade.zip",
+      "label": "env decade",
+      "description": "env decade output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "thetao_avg_m",
-      "path": "/mnt/outputs/thetao_avg_m.nc",
-      "label": "thetao_avg_m",
-      "description": ""
+      "path": "/mnt/outputs/thetao_avg_m.zip",
+      "label": "thetao avg m",
+      "description": "thetao average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "so_avg_m",
-      "path": "/mnt/outputs/so_avg_m.nc",
-      "label": "so_avg_m",
-      "description": ""
+      "path": "/mnt/outputs/so_avg_m.zip",
+      "label": "so avg m",
+      "description": "so average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "npp_avg_m",
-      "path": "/mnt/outputs/npp_avg_m.nc",
+      "path": "/mnt/outputs/npp_avg_m.zip",
       "label": "npp_avg_m",
-      "description": ""
+      "description": "npp average monthly output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "thetao_avg_d",
-      "path": "/mnt/outputs/thetao_avg_d.nc",
+      "path": "/mnt/outputs/thetao_avg_d.zip",
       "label": "thetao_avg_d",
-      "description": ""
+      "description": "thetao average daily output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "so_avg_d",
-      "path": "/mnt/outputs/so_avg_d.nc",
+      "path": "/mnt/outputs/so_avg_d.zip",
       "label": "so_avg_d",
-      "description": ""
+      "description": "so average daily output from 06 extract environment"
     },
     {
-      "type": "Text",
+      "type": "Zip",
       "name": "npp_avg_d",
-      "path": "/mnt/outputs/npp_avg_d.nc",
+      "path": "/mnt/outputs/npp_avg_d.zip",
       "label": "npp_avg_d",
-      "description": ""
+      "description": "npp average daily output from 06 extract environment"
+    },
+    {
+      "type": "Zip",
+      "name": "bathy",
+      "path": "/mnt/outputs/bathy.zip",
+      "label": "bathy",
+      "description": "bathy output from 06 extract environment"
     }
   ],
   "resources": {
@@ -123,7 +137,8 @@
     "estimatedTime": 4
   },
   "tags": [
-"Habitat Suitability Model" , "MARCO-BOLO"
+    "Habitat Suitability Model",
+    "MARCO-BOLO"
   ],
   "license": "GPL v3",
   "version": "0.0.1",
@@ -137,10 +152,10 @@
     }
   ],
   "publicationDate": "Thu, 04 June 2025 11:13:00 GMT",
-  "author": "Nowé Jo-Hannes" ,
+  "author": "Nowé Jo-Hannes",
   "bugs": {
-      "email": "johannes.nowe@vliz.be",
-      "url": "https://helpdesk.lifewatch.eu/"
+    "email": "johannes.nowe@vliz.be",
+    "url": "https://helpdesk.lifewatch.eu/"
   },
   "citation": null,
   "testPath": "emptyUnitTest.sh",

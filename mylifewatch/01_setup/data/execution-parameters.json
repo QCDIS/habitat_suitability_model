@@ -1,11 +1,6 @@
 {
   "parameters": [
     {
-      "name": "study_area_name",
-      "defaultValue": "ospar_regions_2017_01_002.shp",
-      "value": "ospar_regions_2017_01_002.shp"
-    },
-    {
       "name": "start_date",
       "defaultValue": "1999-01-01",
       "value": "1999-01-01"
