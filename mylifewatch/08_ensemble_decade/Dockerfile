@@ -1,4 +1,4 @@
-FROM docker.io/library/base-my
+FROM ghcr.io/qcdis/habitat_suitability_model:v0.2.1
 
 RUN which python3
 
