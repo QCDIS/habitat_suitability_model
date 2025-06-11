@@ -88,9 +88,9 @@
     },
     {
       "type": "Zip",
-      "name": "nc",
+      "name": "nc_10",
       "path": "/mnt/outputs/nc.zip",
-      "label": "nc",
+      "label": "nc 10",
       "description": "netcdf output from 10 mapping predictions"
     }
   ],
