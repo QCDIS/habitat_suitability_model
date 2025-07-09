@@ -31,7 +31,7 @@
     {
       "type": "Zip",
       "name": "mydata_eurobis_file",
-      "path": "/mnt/inputs/mydata_eurobis_file.zip",
+      "path": "/mnt/inputs/mydata_eurobis.zip",
       "label": "mydata_eurobis_file",
       "description": ""
     },

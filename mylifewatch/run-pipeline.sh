@@ -60,20 +60,25 @@ for ((i=0; i<${#wrapper_paths[@]}; i++)); do
 done
 
 
-for i in "${wrapper_paths[@]}"
-do
-	echo $i
-	sudo rm -rf data/inputs/* data/outputs/*
-done
+#for i in "${wrapper_paths[@]}"
+#do
+#	echo $i
+#	sudo rm -rf data/inputs/* data/outputs/*
+#done
 
 for wrapper_path in "${wrapper_paths[@]}"
 do
   echo "---------------------------Running pipeline step: ${wrapper_path}----------------------------"
   cd "$wrapper_path"
-  ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
+#  ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
   check_inputs
   prestage_input_data
   cd ${base_dir}
+  # stop at 02_download_presences
+  if [[ "$wrapper_path" == "02_download_presences" ]]; then
+    echo "Stopping pipeline execution at step: ${wrapper_path}"
+    break
+  fi
 done
 
 echo "---------------------------Pipeline completed successfully----------------------------"
