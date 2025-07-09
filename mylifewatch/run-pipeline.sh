@@ -19,9 +19,7 @@ wrapper_paths=("01_setup"
 
 check_inputs() {
   echo "Checking inputs from JSON file in $(pwd)"
-  local json_file="$1"
-  local dest_dir="$2"
-  jq -r '.inputs[].path' "$json_file" > inputs_wrapper_paths.txt
+  jq -r '.inputs[].path' "annotation.json" > inputs_wrapper_paths.txt
   while read -r path; do
     # Replace '/mnt/' with 'data/' in the path
     path="${path//\/mnt\//data/}"
@@ -34,13 +32,14 @@ check_inputs() {
 }
 
 prestage_input_data(){
-  jq -r '.outputs[].path' "annotation.json" > generated_generated_output_paths.txt
+  jq -r '.outputs[].path' "annotation.json" > generated_output_paths.txt
+
   while read -r generated_output_path; do
     local_generated_output_path="${generated_output_path//\/mnt\//data/}"
     echo "Looking for usage of output path: $generated_output_path"
-    for ((i=0; i<${#wrapper_paths[@]}; i++)); do
-      wrapper_path="${wrapper_paths[$i]}"
-      jq -r '.inputs[].path' "../$wrapper_path/annotation.json" > requsted_input_pathsinput_paths.txt
+    for wrapper_path in "${wrapper_paths[@]}"
+    do
+      jq -r '.inputs[].path' "../$wrapper_path/annotation.json" > requsted_input_paths.txt
       while read -r requsted_input_path; do
         generated_output_file_name=$(basename "$generated_output_path")
         requsted_input_file_name=$(basename "$requsted_input_path")
@@ -49,9 +48,9 @@ prestage_input_data(){
           echo "Copying $local_generated_output_path to ../$wrapper_path/$dest_dir"
           cp "$local_generated_output_path" "../$wrapper_path/$dest_dir"
         fi
-      done < requsted_input_pathsinput_paths.txt
+      done < requsted_input_paths.txt
     done
-  done < generated_generated_output_paths.txt
+  done < generated_output_paths.txt
 }
 
 
@@ -60,12 +59,19 @@ for ((i=0; i<${#wrapper_paths[@]}; i++)); do
   sudo rm -rf data/inputs/* data/outputs/*
 done
 
-for ((i=0; i<${#wrapper_paths[@]}; i++)); do
-  current="${wrapper_paths[$i]}"
-  echo "---------------------------Running pipeline step: ${current}----------------------------"
-  cd "$current"
+
+for i in "${wrapper_paths[@]}"
+do
+	echo $i
+	sudo rm -rf data/inputs/* data/outputs/*
+done
+
+for wrapper_path in "${wrapper_paths[@]}"
+do
+  echo "---------------------------Running pipeline step: ${wrapper_path}----------------------------"
+  cd "$wrapper_path"
   ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
-  check_inputs "annotation.json"
+  check_inputs
   prestage_input_data
   cd ${base_dir}
 done
