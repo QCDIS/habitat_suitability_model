@@ -41,13 +41,6 @@
       "path": "/mnt/inputs/study_area.zip",
       "label": "study_area",
       "description": ""
-    },
-        {
-      "type": "Zip",
-      "name": "datasets_selection",
-      "path": "/mnt/inputs/datasets_selection.zip",
-      "label": "datasets selection",
-      "description": "datasets selection output from 04 preprocess presences"
     }
   ],
   "outputs": [
