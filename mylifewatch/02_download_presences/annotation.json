@@ -16,7 +16,7 @@
     {
       "type": "Zip",
       "name": "study_area",
-      "path": "/mnt/outputs/study_area.zip",
+      "path": "/mnt/inputs/study_area.zip",
       "label": "study area file",
       "description": "zip file containing the study area"
     },

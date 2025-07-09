@@ -10,7 +10,7 @@
 
 path = list(
   code = "./code",
-  env_month = "/mnt/inputs/env_month.RDS",
+  env_month = "/mnt/inputs/env/env_month.RDS",
   thetao_avg_m = "/mnt/inputs/thetao_avg_m.nc",
   so_avg_m = "/mnt/inputs/so_avg_m.nc",
   npp_avg_m = "/mnt/inputs/npp_avg_m.nc",
@@ -50,7 +50,7 @@ args = args_parse(commandArgs(trailingOnly = TRUE))
 #knndm_fold
 
 # INPUT -------------------------------------------------------------------
-# load(file.path(path$env_month))
+load(file.path(path$env_month))
 env_month <- readRDS(file.path(path$env_month))
 thetao_avg_m <- terra::rast(file.path(path$thetao_avg_m))
 so_avg_m <- terra::rast(file.path(path$so_avg_m))
