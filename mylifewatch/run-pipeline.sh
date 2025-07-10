@@ -49,6 +49,10 @@ prestage_input_data(){
         if [[ "$generated_output_file_name" == "$requsted_input_file_name" ]]; then
           dest_dir="${requsted_input_path//\/mnt\//data/}"
           echo "Copying $local_generated_output_path to ../$wrapper_path/$dest_dir"
+          if [ ! -f "$local_generated_output_path" ]; then
+            echo "Error: $local_generated_output_path does not exist."
+            exit 1
+          fi
           cp "$local_generated_output_path" "../$wrapper_path/$dest_dir"
         fi
       done < requsted_input_paths.txt

@@ -9,6 +9,13 @@
   "inputs": [
     {
       "type": "Zip",
+      "name": "tempsal",
+      "path": "/mnt/inputs/tempsal.zip",
+      "label": "tempsal output",
+      "description": "output from 03 download environment"
+    },
+    {
+      "type": "Zip",
       "name": "01_setup",
       "path": "/mnt/inputs/01_setup.zip",
       "label": "01_setup output",
