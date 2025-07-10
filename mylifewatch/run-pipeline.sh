@@ -27,9 +27,10 @@ check_inputs_outputs() {
     echo "Checking path: $path"
     if [ ! -f "$path" ]; then
       echo "Error: $path does not exist."
-      exit 1
+      return 1
     fi
   done < wrapper_paths.txt
+  return 0
 }
 
 prestage_input_data(){
@@ -67,8 +68,12 @@ do
   echo "---------------------------Running pipeline step: ${wrapper_path}----------------------------"
   cd "$wrapper_path"
   check_inputs_outputs "inputs"
-#  ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
-  check_inputs_outputs "outputs"
+  if check_inputs_outputs "outputs"; then
+    echo "We have outputs, skipping build and execute"
+  else
+    ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
+    check_inputs_outputs "outputs"
+  fi
   prestage_input_data
   cd ${base_dir}
 done
