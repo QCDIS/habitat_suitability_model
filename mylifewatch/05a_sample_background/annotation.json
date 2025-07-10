@@ -49,7 +49,6 @@
       "label": "thinned_d_file",
       "description": ""
     },
-
     {
       "type": "Zip",
       "name": "study_area",

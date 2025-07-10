@@ -37,24 +37,10 @@
     },
     {
       "type": "Zip",
-      "name": "mean_npp",
-      "path": "/mnt/inputs/mean_npp.zip",
-      "label": "mean_npp",
-      "description": ""
-    },
-    {
-      "type": "Zip",
       "name": "npp",
       "path": "/mnt/inputs/npp.zip",
       "label": "npp output",
       "description": "npp output from 03 download environment"
-    },
-    {
-      "type": "Zip",
-      "name": "bathy_sliced",
-      "path": "/mnt/inputs/bathy_sliced",
-      "label": "bathy_sliced",
-      "description": ""
     },
     {
       "type": "Zip",
