@@ -17,18 +17,19 @@ wrapper_paths=("01_setup"
         "11_static_plot")
 
 
-check_inputs() {
-  echo "Checking inputs from JSON file in $(pwd)"
-  jq -r '.inputs[].path' "annotation.json" > inputs_wrapper_paths.txt
+check_inputs_outputs() {
+  local type="$1"  # "inputs" or "outputs"
+  echo "Checking $type from JSON file in $(pwd)"
+  jq -r ".${type}[].path" "annotation.json" > wrapper_paths.txt
   while read -r path; do
     # Replace '/mnt/' with 'data/' in the path
     path="${path//\/mnt\//data/}"
-    echo "Checking input path: $path"
+    echo "Checking path: $path"
     if [ ! -f "$path" ]; then
-      echo "Error input: $path does not exist."
-      exit -1
+      echo "Error: $path does not exist."
+      exit 1
     fi
-  done < inputs_wrapper_paths.txt
+  done < wrapper_paths.txt
 }
 
 prestage_input_data(){
@@ -43,6 +44,7 @@ prestage_input_data(){
       while read -r requsted_input_path; do
         generated_output_file_name=$(basename "$generated_output_path")
         requsted_input_file_name=$(basename "$requsted_input_path")
+        echo "Checking if $generated_output_file_name is used in $wrapper_path $requsted_input_file_name"
         if [[ "$generated_output_file_name" == "$requsted_input_file_name" ]]; then
           dest_dir="${requsted_input_path//\/mnt\//data/}"
           echo "Copying $local_generated_output_path to ../$wrapper_path/$dest_dir"
@@ -54,31 +56,21 @@ prestage_input_data(){
 }
 
 
-# Celan up the data/inputs and data/outputs directories
-for ((i=0; i<${#wrapper_paths[@]}; i++)); do
-  sudo rm -rf data/inputs/* data/outputs/*
-done
-
-
-for i in "${wrapper_paths[@]}"
-do
-	echo $i
-	sudo rm -rf data/inputs/* data/outputs/*
-done
+#for i in "${wrapper_paths[@]}"
+#do
+#	echo $i
+#	sudo rm -rf data/inputs/* data/outputs/*
+#done
 
 for wrapper_path in "${wrapper_paths[@]}"
 do
   echo "---------------------------Running pipeline step: ${wrapper_path}----------------------------"
   cd "$wrapper_path"
-  ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
-  check_inputs
+  check_inputs_outputs "inputs"
+#  ${dev_kit_dir}/bin/build-image && ${dev_kit_dir}/bin/execute
+  check_inputs_outputs "outputs"
   prestage_input_data
   cd ${base_dir}
-  # stop at 02_download_presences
-  if [[ "$wrapper_path" == "02_download_presences" ]]; then
-    echo "Stopping pipeline execution at step: ${wrapper_path}"
-    break
-  fi
 done
 
 echo "---------------------------Pipeline completed successfully----------------------------"

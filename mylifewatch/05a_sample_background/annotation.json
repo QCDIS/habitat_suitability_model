@@ -60,13 +60,6 @@
   "outputs": [
     {
       "type": "Zip",
-      "name": "thinned_tg_m",
-      "path": "/mnt/outputs/thinned_tg_m.zip",
-      "label": "thinned tg m",
-      "description": "thinned tg m output from 05a sample background"
-    },
-    {
-      "type": "Zip",
       "name": "target_group",
       "path": "/mnt/outputs/target_group.zip",
       "label": "target_group",
