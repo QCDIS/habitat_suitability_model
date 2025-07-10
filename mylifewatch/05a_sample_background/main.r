@@ -12,7 +12,6 @@
 ##################################################################################
 ##################################################################################
 path = list(
-  code = "./code",
   setup = "/mnt/inputs/01_setup.json",
   tempsal_filename = "/mnt/inputs/tempsal.nc",
   datasets_selection = "/mnt/inputs/datasets_selection.csv",

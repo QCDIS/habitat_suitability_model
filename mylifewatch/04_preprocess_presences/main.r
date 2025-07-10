@@ -14,7 +14,6 @@ rm(list = ls())             # Remove all variables of the work space
 ##################################################################################
 
 path = list(
-  code = "./code",
   datasets_all_file = "/mnt/inputs/datasets_all.csv",
   mydata_eurobis_file = "/mnt/inputs/mydata_eurobis.RDS",
   study_area_file = "/mnt/inputs/study_area.RDS",

@@ -15,7 +15,6 @@ library(terra)
 ##################################################################################
 
 path = list(
-  code = "./code",
   tempsal_filename = "/mnt/inputs/tempsal.nc",
   study_area_file = "/mnt/inputs/study_area.RDS",
   pback_month = "/mnt/inputs/pback_month.RDS",

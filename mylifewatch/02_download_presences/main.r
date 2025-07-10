@@ -17,7 +17,6 @@ library(dplyr)    # alternatively, this also loads %>%
 
 path = list(
   setup = "/mnt/inputs/01_setup.json",
-  code = "./code",
   study_area_file = "/mnt/inputs/study_area.RDS",
   temporal_extent_file = "/mnt/inputs/temporal_extent.RDS",
   datasets_all_file = "/mnt/outputs/datasets_all.csv",

@@ -12,7 +12,6 @@ rm(list = ls())             # Remove all variables of the work space
 
 
 path = list(
-  code = "./code",
   study_area_file = "/mnt/inputs/study_area.RDS",
   setup = "/mnt/inputs/01_setup.json",
   stack_fit = "/mnt/inputs/modelling_decade/stack_fit.RDS",

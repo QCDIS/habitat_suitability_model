@@ -13,13 +13,6 @@
       "path": "/mnt/inputs/01_setup.zip",
       "label": "01_setup output",
       "description": "zip file containing the setup information"
-    },
-    {
-      "type": "Zip",
-      "name": "nc_10",
-      "path": "/mnt/inputs/nc.zip",
-      "label": "nc 10",
-      "description": "netcdf output from 10 mapping predictions"
     }
   ],
   "outputs": [

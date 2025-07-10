@@ -9,7 +9,6 @@
 # SETUP ------------------------------------
 
 path = list(
-  code = "./code",
   env_month = "/mnt/inputs/env/env_month.RDS",
   thetao_avg_m = "/mnt/inputs/thetao_avg_m.nc",
   so_avg_m = "/mnt/inputs/so_avg_m.nc",

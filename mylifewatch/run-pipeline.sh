@@ -35,7 +35,6 @@ check_inputs_outputs() {
 
 prestage_input_data(){
   jq -r '.outputs[].path' "annotation.json" > generated_output_paths.txt
-
   while read -r generated_output_path; do
     local_generated_output_path="${generated_output_path//\/mnt\//data/}"
     echo "Looking for usage of output path: $generated_output_path"

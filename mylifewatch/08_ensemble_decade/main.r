@@ -11,7 +11,6 @@ cat("\014")                 # Clears the console
 rm(list = ls())             # Remove all variables of the work space
 
 path = list(
-  code = "./code",
   env_decade = "/mnt/inputs/env_decade.RDS",
   modelling_decade = "/mnt/outputs/modelling_decade",
   ranger = "/mnt/outputs/modelling_decade/ranger.RDS",

@@ -16,8 +16,7 @@ path = list(
   setup = "/mnt/outputs/01_setup.json",
   study_area_file = "/mnt/outputs/study_area.RDS",
   temporal_extent_file = "/mnt/outputs/temporal_extent.RDS",
-  spatial_layers = "/mnt/outputs/spatial_layers",
-  code = "./code"
+  spatial_layers = "/mnt/outputs/spatial_layers"
 )
 
 
