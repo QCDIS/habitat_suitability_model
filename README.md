@@ -28,3 +28,12 @@ Next to test the warp you can run the following command:
 ```bash
 ~/workspace/mylifewatch-wrapper-development-kit/bin/execute
 ```
+
+
+To test all warps you can use the mylifewatch/run-pipeline.sh script.:
+
+```bash
+~/workspace/mylifewatch-wrapper-development-kit/bin/run-pipeline.sh
+```
+The script assumes that the mylifewatch-wrapper-development-kit is in ~/workspace/mylifewatch-wrapper-development-kit
+

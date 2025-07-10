@@ -23,11 +23,12 @@ study_area <- readRDS(file.path(datadir,"study_area.RDS"))
 date_start <- as_datetime("1999-01-01")
 date_end <- as_datetime("2019-12-31")
 # WORKFLOW ----------------------------------------------------------------
-library(reticulate) #reticulate package allows for python usage in R 
-virtualenv_create("mbo-proj",force=FALSE) #create a virtual environment to install packages in
-py_install("copernicusmarine",envname = "mbo-proj") #the copernicusmarine package allows CMEMS downloads
-virtualenv_list() #Check the list of available environments
-use_virtualenv("mbo-proj") #Load the environment
+# Not surce if we use the python virtualenv
+# library(reticulate) #reticulate package allows for python usage in R
+# virtualenv_create("mbo-proj",force=FALSE) #create a virtual environment to install packages in
+# py_install("copernicusmarine",envname = "mbo-proj") #the copernicusmarine package allows CMEMS downloads
+# virtualenv_list() #Check the list of available environments
+# use_virtualenv("mbo-proj") #Load the environment
 
 # More information on the reticulate package on: https://rstudio.github.io/cheatsheets/reticulate.pdf
 # 

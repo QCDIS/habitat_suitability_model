@@ -27,7 +27,7 @@ path = list(
 
 
 lapply(list.files("functions", full.names = TRUE),source)
-sapply(list.files(path$code, full.names = T), source)
+
 lapply(list.files("/wrp/utils", full.names = TRUE, pattern = "\\.R$"), source)
 
 args = args_parse(commandArgs(trailingOnly = TRUE))

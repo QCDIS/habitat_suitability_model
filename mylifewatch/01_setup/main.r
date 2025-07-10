@@ -29,11 +29,8 @@ if(!dir.exists(path$spatial_layers)){
 }
 
 
-
-
 # FUNCTIONS ---------------------------------------------------------------
 lapply(list.files("functions", full.names = TRUE),source)
-sapply(list.files(path$code, full.names = T), source)
 lapply(list.files("/wrp/utils", full.names = TRUE, pattern = "\\.R$"), source)
 # INPUT -------------------------------------------------------------------
 
